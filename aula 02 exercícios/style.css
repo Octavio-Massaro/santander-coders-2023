@@ -1,0 +1,43 @@
+body{
+    font-family: 'Roboto','Arial', sans-serif;
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td{
+    border: 1px solid rgb(207, 205, 205);
+    padding: 12px;
+}
+
+.hide-border{
+    border: none;
+}
+
+button{
+    border: none;
+    width: 150px;
+    height: 40px;
+    padding: 10px;
+    color: white;
+}
+
+.color-basic{
+    background-color: #7ebff2;
+}
+
+.color-standard{
+    background-color: #4a87ec;
+}
+
+.color-advanced{
+    background-color: #7073ec;
+}
+
+.highlight{
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
