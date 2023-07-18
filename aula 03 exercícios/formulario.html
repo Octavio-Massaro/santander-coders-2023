@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <form>
+            <fieldset>
+                <div>
+                    <label for="name">Nome</label>
+                    <input class="custom-input" type="text" id="name" name="nome" placeholder="Insira seu nome" required/>
+                </div>
+
+                <div>
+                    <label for="telefone">Telefone</label>
+                    <input class="custom-input" type="text" id="telefone" name="telefone" placeholder="Insira seu telefone" required/>
+                </div>
+
+                <div>
+                    <label for="data-nascimento">Data de nascimento</label>
+                    <input class="custom-input" type="date" id="data-nascimento" name="data-nascimento" required/>
+                </div>
+
+                <div>
+                    <label for="idade">Idade</label>
+                    <input class="custom-input" type="number" id="idade" name="idade" placeholder="Insira sua idade" min="0" required/>
+                </div>
+
+                <div>
+                    <label for="email">E-mail</label>
+                    <input class="custom-input" type="email" id="email" name="email" placeholder="Insira seu e-mail" required/>
+                </div>
+
+                <div>
+                    <label for="senha">Senha</label>
+                    <input class="custom-input" type="password" id="senha" name="senha" placeholder="Insira sua senha" required/>
+                </div>
+
+                <div>
+                    <label for="termos-aceite">
+                        <input type="checkbox" name="termos-aceite" id="termos-aceite" required/> Concordo com os termos e condições    
+                    </label>
+                </div>
+
+                <button class ="button-config" type="submit">Enviar</button>
+
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>
