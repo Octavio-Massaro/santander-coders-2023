@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+.custom-hearder{
+    background-color: #4caf50;
+    color: white;
+    font-size: large;
+    text-align: center;
+    padding: 30px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+nav {
+    background-color: rgb(241, 239, 239);
+    text-align: center;
+    padding: 15px;
+    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    margin-right: 15px;
+}
+
+a:hover{
+    background-color: white;
+    padding: 10px;
+}
+
+main {
+    border: 1px solid rgb(235, 232, 232);
+    border-radius: .3rem;
+    background-color: white;
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+}
+
+
+h2 {
+    margin: 20px 0;
+}
+
+.flex-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+h3 {
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+figure {
+    display: flex;
+}
+
+hr {
+    margin-top: 10px;
+    border: 1px solid rgb(241, 239, 239);
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td{
+    border: 1px solid rgb(207, 205, 205);
+    padding: 10px;
+}
+
+thead > tr{
+    background-color: rgb(241, 239, 239);
+    width: 50%;
+}
+
+fieldset{
+    border: 1px solid rgb(235, 232, 232);
+    border-radius: .3rem;
+    padding: 20px;
+}
+
+
+input, textarea {
+    width: 100%;
+    border: 1px solid rgb(202, 200, 200);
+    border-radius: .3rem;
+    padding: 10px 12px;
+    margin: 12px 0;
+}
+
+
+.botao-enviar {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 35px;
+}
+
+footer {
+    background-color: #4caf50;
+    color: white;
+    font-size: large;
+    text-align: center;
+    padding: 30px;
+}
+
+
+
+
