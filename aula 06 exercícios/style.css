@@ -57,5 +57,5 @@ h2{
     "cardapio-digital cardapio-digital" 15vh
     "barra-navegacao barra-navegacao" 5vh
     "conteudo01 conteudo02" 75vh
-    "rodape rodape" 5vh / 50% 50%;
+    "rodape rodape" 5vh / auto auto;
 }
