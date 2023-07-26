@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    color: white;
+}
+
+h1{
+    margin: 50px 0 0 10px;
+}
+
+h2{
+    margin: 10px 0 0 10px;
+}
+
+.grid {
+    display: grid;
+    column-gap: 10px;
+}
+
+.cardapio-digital{
+    grid-area: cardapio-digital;
+    background-color: rgb(71, 71, 238);
+}
+
+.barra-navegacao {
+    grid-area: barra-navegacao;
+    margin-bottom: 5px;
+    background-color: rgb(52, 190, 52);
+}
+
+.conteudo01 {
+    grid-area: conteudo01;
+    background-color: orange;
+    margin-left: 5px;
+
+}
+
+.conteudo02 {
+    grid-area: conteudo02;
+    background-color: orange;
+
+}
+
+.rodape {
+    grid-area: rodape;
+    margin-top: 5px;
+    background-color: rgb(37, 36, 37);
+}
+
+.grid-areas{
+    grid-template:
+    "cardapio-digital cardapio-digital" 15vh
+    "barra-navegacao barra-navegacao" 5vh
+    "conteudo01 conteudo02" 75vh
+    "rodape rodape" 5vh / 50% 50%;
+}
