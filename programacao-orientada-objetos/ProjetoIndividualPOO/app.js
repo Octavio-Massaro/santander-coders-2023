@@ -1,13 +1,16 @@
 class Item {
-    static #id = 0;
+    #id;
     #nome;
     #preco;
-
+    static #contador = 0;
     constructor(nome, preco) {
-        Item.#id++;
-        this.id = Item.#id;
+        this.#id = Item.#contador++;
         this.#nome = nome;
         this.#preco = preco;
+    }
+
+    getId(){
+        return this.#id;
     }
 
     getNome() {
@@ -27,7 +30,7 @@ class Item {
     }
 
     descrever() {
-        console.log(`Item ${Item.#id}: ${this.getNome()}, Preço: R$${this.getPreco()}`);
+        console.log(`Item ${this.getId()}: ${this.getNome()}, Preço: R$${this.getPreco()}`);
     }
 }
 
@@ -42,7 +45,7 @@ class Jogo extends Item {
     }
 
     getJogoId() {
-        return this.id;
+        return super.getId();
     }
 
     getDataLancamento() {
@@ -170,7 +173,7 @@ class GerenciadorJogos {
     }
 
     static removerJogo(id) {
-        this.#listaJogos = this.#listaJogos.filter((jogo) => jogo.id !== id);
+        this.#listaJogos = this.#listaJogos.filter((jogo) => jogo.getJogoId() !== id);
     }
 
     static limparCampos() {
@@ -211,3 +214,5 @@ GerenciadorJogos.prototype.ContarJogos = function () {
     contagemJogo = GerenciadorJogos.getListaJogos()
     console.log(contagemJogo.length);
 }
+
+g = new GerenciadorJogos();
