@@ -37,7 +37,6 @@ class Item {
 class Jogo extends Item {
     #dataLancamento;
     #tipo;
-
     constructor(nome, preco, dataLancamento, tipo) {
         super(nome, preco);
         this.#dataLancamento = dataLancamento;
@@ -112,12 +111,12 @@ class GerenciadorJogos {
         editarBtns.forEach((btn) => {
             btn.addEventListener("click", (e) => {
                 const id = parseInt(e.target.getAttribute("data-id"));
-                this.pegarValoresFormularioEditar(id);
+                this.#pegarValoresFormularioEditar(id);
             });
         });
     }
 
-    static pegarValoresFormularioEditar(id) {
+    static #pegarValoresFormularioEditar(id) {
         const jogo = this.getListaJogos().find((jogo) => jogo.getJogoId() === id);
 
         const editId = document.getElementById("editId");
@@ -212,7 +211,7 @@ GerenciadorJogos.init();
 
 GerenciadorJogos.prototype.ContarJogos = function () {
     contagemJogo = GerenciadorJogos.getListaJogos()
-    console.log(contagemJogo.length);
+    return contagemJogo.length;
 }
 
 g = new GerenciadorJogos();
