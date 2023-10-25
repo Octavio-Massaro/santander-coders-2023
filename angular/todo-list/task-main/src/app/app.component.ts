@@ -53,30 +53,6 @@ export class AppComponent {
     {
       date: new Date(),
       description: 'description01',
-      status: 'trabalhando',
-      title: 'title20',
-    },
-    {
-      date: new Date(),
-      description: 'description01',
-      status: 'trabalhando',
-      title: 'title23',
-    },
-    {
-      date: new Date(),
-      description: 'description01',
-      status: 'trabalhando',
-      title: 'title24',
-    },
-    {
-      date: new Date(),
-      description: 'description01',
-      status: 'finalizado',
-      title: 'title27',
-    },
-    {
-      date: new Date(),
-      description: 'description01',
       status: 'finalizado',
       title: 'title28',
     },

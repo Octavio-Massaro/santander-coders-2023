@@ -1,16 +1,59 @@
 <div>
   <h2>Tarefas</h2>
 
-  <app-task-filtro (onChangeFiltro)="handleFiltro($event)" ></app-task-filtro>
-  <ul *ngIf="isVisible">
-    <li *ngFor="let task of tasksFiltradas">
-      <div (click)="selectedTask(task)" appDateGreaterThanToday [Date]="task.date">
-        {{ task.title }}
-        {{ "01/02/2020" | date : "dd/MM/yyyy" }} -
-        {{ task.description | uppercase | slice : 0 : 5 }}
-      </div>
-    </li>
-  </ul>
+  <app-task-filtro (onChangeFiltro)="handleFiltro($event)"></app-task-filtro>
+  <div class = "d-flex justify-content-around">
+    <ul *ngIf="isVisible" class="me-5">
+      <h3>To-Do</h3>
+      <ng-container *ngFor="let task of tasksFiltradas">
+        <ng-container *ngIf="task.status === 'toDo'">
+          <li (click)="selectedTask(task)" appDateGreaterThanToday [Date]="task.date">
+            <div class="card" style="width: 15rem; height: 10rem;">
+              <div class="card-body">
+                <h4 class="card-title">{{ task.title }}</h4>
+                <p class="card-text">{{ task.date | date : "dd/MM/yyyy" }} </p>
+                <p class="card-text">{{ task.description }}</p>
+              </div>
+            </div>
+          </li>
+        </ng-container>
+      </ng-container>
+    </ul>
+
+    <ul *ngIf="isVisible" class="me-5">
+      <h3>Trabalhando</h3>
+      <ng-container *ngFor="let task of tasksFiltradas">
+        <ng-container *ngIf="task.status === 'trabalhando'">
+          <li (click)="selectedTask(task)" appDateGreaterThanToday [Date]="task.date">
+            <div class="card" style="width: 15rem; height: 10rem;">
+              <div class="card-body">
+                <h4 class="card-title">{{ task.title }}</h4>
+                <p class="card-text">{{ task.date | date : "dd/MM/yyyy" }} </p>
+                <p class="card-text">{{ task.description }}</p>
+              </div>
+            </div>
+          </li>
+        </ng-container>
+      </ng-container>
+    </ul>
+
+    <ul *ngIf="isVisible" class="me-5">
+      <h3>Finalizando</h3>
+      <ng-container *ngFor="let task of tasksFiltradas">
+        <ng-container *ngIf="task.status === 'finalizado'">
+          <li (click)="selectedTask(task)" appDateGreaterThanToday [Date]="task.date">
+            <div class="card" style="width: 15rem; height: 10rem;">
+              <div class="card-body">
+                <h4 class="card-title">{{ task.title }}</h4>
+                <p class="card-text">{{ task.date | date : "dd/MM/yyyy" }} </p>
+                <p class="card-text">{{ task.description }}</p>
+              </div>
+            </div>
+          </li>
+        </ng-container>
+      </ng-container>
+    </ul>
+  </div>
 
   <button (click)="mostrarLista()">Mostrar Lista</button>
 </div>

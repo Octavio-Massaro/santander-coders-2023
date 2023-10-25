@@ -4,9 +4,11 @@ import {
   EventEmitter,
   Input,
   Output,
-  OnInit
+  OnInit,
+  Renderer2
 } from '@angular/core';
 import { Task } from 'src/models/task.model';
+
 
 @Component({
   selector: 'app-task-list',
@@ -18,6 +20,10 @@ export class TaskListComponent implements OnInit {
 
   @Input() tasks: Task[] = [];
   @Output() handleTask = new EventEmitter();
+
+  constructor(private renderer: Renderer2){
+
+  }
 
   tasksFiltradas: Task[] = [];
 
@@ -31,6 +37,10 @@ export class TaskListComponent implements OnInit {
   }
 
   selectedTask(task: Task) {
+    const currentDate = new Date();
+    if (task.date > currentDate) {
+
+    }
     this.handleTask.emit(task);
   }
 
