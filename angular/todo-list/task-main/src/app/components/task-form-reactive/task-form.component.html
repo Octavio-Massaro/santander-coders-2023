@@ -5,7 +5,7 @@
     <div class="mb-3">
       <label for="title" class="form-label">Título</label>
       <input id="title" type="text" class="form-control" formControlName="title" name="title" />
-      <div *ngIf="formulario.get('title')?.invalid && (formulario.get('title')?.dirty || formulario.get('title')?.touched)" class="text-danger">
+      <div *ngIf="formulario.get('title')?.invalid && (formulario.get('title')?.touched)" class="text-danger">
         <div *ngIf="formulario.get('title')?.errors?.['required']">O campo título é obrigatório.</div>
         <div *ngIf="formulario.get('title')?.errors?.['maxlength']">Máximo de 20 caracteres.</div>
         <div *ngIf="formulario.get('title')?.errors?.['minlength']">Mínimo de 5 caracteres.</div>
@@ -20,7 +20,7 @@
         formControlName="description"
         name="description"
       />
-      <div *ngIf="formulario.get('description')?.invalid && (formulario.get('description')?.dirty || formulario.get('description')?.touched)" class="text-danger">
+      <div *ngIf="formulario.get('description')?.invalid && (formulario.get('description')?.touched)" class="text-danger">
         <div *ngIf="formulario.get('description')?.errors?.['required']">O campo descrição é obrigatório.</div>
         <div *ngIf="formulario.get('description')?.errors?.['maxlength']">Máximo de 50 caracteres.</div>
         <div *ngIf="formulario.get('description')?.errors?.['minlength']">Mínimo de 5 caracteres.</div>
@@ -41,8 +41,8 @@
         <option value="trabalhando">Trabalhando</option>
         <option value="finalizado">Finalizado</option>
       </select>
-      <div *ngIf="formulario.get('status')?.invalid && (formulario.get('status')?.dirty || formulario.get('status')?.touched)" class="text-danger">
-        <div *ngIf="formulario.get('status')?.errors?.['required']">O campo nome do plano é obrigatório.</div>
+      <div *ngIf="formulario.get('status')?.invalid && (formulario.get('status')?.touched)" class="text-danger">
+        <div *ngIf="formulario.get('status')?.errors?.['required']">O campo status é obrigatório.</div>
       </div>
     </div>
 

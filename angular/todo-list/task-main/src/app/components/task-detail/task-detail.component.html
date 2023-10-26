@@ -1,10 +1,14 @@
 <div>
   <h2>Detalhes da Tarefa</h2>
 
-  <p>titulo: {{ task.title }}</p>
-  <p>Descrição {{ task.description }}:</p>
-  <p>Data de Vencimento: {{ task.date | date : "dd/MM/yyyy" }}</p>
-  <p>Data de Vencimento: {{ task.status }}</p>
+  <div class="card mb-3" style="width: 15rem; height: 20rem;">
+    <div class="card-body" appDateGreaterThanToday [Date]="task.date">
+      <h4 class="card-title">Titulo: {{ task.title }}</h4>
+      <p class="card-text">Descrição: {{ task.description }} </p>
+      <p class="card-text">Data de Vencimento: {{ task.date | date : "dd/MM/yyyy" }}</p>
+      <p class="card-text">Status: {{ task.status }}</p>
+    </div>
+  </div>
 
-  <button (click)="close()">Fechar</button>
+  <button (click)="close()" class="btn btn-primary my-3">Fechar</button>
 </div>

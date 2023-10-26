@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { TaskFormComponent } from './components/task-form/task-form.component';
+import { TaskFormComponent } from './components/task-form-reactive/task-form.component';
 import { FormsModule } from '@angular/forms';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { CurrencyFormatPipe } from './pipes/currency-format.pipe';
@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateGreaterThanTodayDirective } from './directives/date-greater-than-today.directive';
 import { TaskFiltroComponent } from './components/task-filtro/task-filtro.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TaskLogComponent } from './components/task-log/task-log.component';
+import { TaskFormDrivenComponent } from './components/task-form-driven/task-form-driven.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TaskDetailComponent,
     DateGreaterThanTodayDirective,
     TaskFiltroComponent,
+    TaskLogComponent,
+    TaskFormDrivenComponent,
   ],
   imports: [
     BrowserModule,

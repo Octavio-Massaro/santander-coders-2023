@@ -1,5 +1,6 @@
 <div class="container">
   <app-task-form (addTask)="onAddTask($event)"></app-task-form>
+  <!-- <app-task-form-driven (addTask)="onAddTask($event)"></app-task-form-driven> -->
   <app-task-list
     [tasks]="listTask"
     (handleTask)="handleTask($event)"
@@ -11,4 +12,5 @@
       (closeDetail)="fecharDetalhes()"
     ></app-task-detail>
   </div>
+  <app-task-log [taskList]="logListTask"></app-task-log>
 </div>

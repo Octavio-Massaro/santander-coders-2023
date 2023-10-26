@@ -10,53 +10,43 @@ export class AppComponent {
   listTask: Task[] = [
     {
       date: new Date(),
-      description: 'description01',
+      description: 'Ler um pouco',
       status: 'trabalhando',
-      title: 'title06',
+      title: 'Leitura',
     },
     {
       date: new Date(),
-      description: 'description01',
+      description: 'Nadar 200 metros',
       status: 'trabalhando',
-      title: 'title09',
+      title: 'Natação',
     },
     {
       date: new Date(),
-      description: 'description01',
-      status: 'trabalhando',
-      title: 'title10',
-    },
-    {
-      date: new Date(),
-      description: 'description01',
+      description: 'Dar aquela estudada em Angular',
       status: 'finalizado',
-      title: 'title16',
+      title: 'Estudar Angular',
     },
     {
       date: new Date(),
-      description: 'description01',
+      description: 'Pegar aquele peixão',
       status: 'finalizado',
-      title: 'title17',
+      title: 'Pescar',
     },
     {
       date: new Date(),
-      description: 'description01',
+      description: 'Que sono bom',
       status: 'toDo',
-      title: 'title18',
+      title: 'Dormir',
     },
     {
       date: new Date(),
-      description: 'description01',
+      description: 'Vou virar um monge',
       status: 'toDo',
-      title: 'title19',
-    },
-    {
-      date: new Date(),
-      description: 'description01',
-      status: 'finalizado',
-      title: 'title28',
+      title: 'Meditar',
     },
   ];
+
+  logListTask: Task[] = [];
 
   selectedTask: Task | null = null;
 
@@ -70,6 +60,7 @@ export class AppComponent {
 
   handleTask(task: Task) {
     this.selectedTask = task;
+    this.logListTask.push(task);
   }
 
   fecharDetalhes() {

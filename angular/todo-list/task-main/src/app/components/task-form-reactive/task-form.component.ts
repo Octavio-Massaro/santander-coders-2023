@@ -33,14 +33,9 @@ export class TaskFormComponent {
   submitTask() {
     if (this.formulario.invalid) {
       this.markFormGroupTouched(this.formulario);
-
     } else {
-      this.newTask.title = this.formulario.value.title;
-      this.newTask.description = this.formulario.value.description;
-      this.newTask.date = this.formulario.value.date;
-      this.newTask.status = this.formulario.value.status;
+      this.addTask.emit(this.formulario.value);
       this.formulario.reset()
-      this.addTask.emit(this.newTask);
       this.newTask = new Task();
   }
 }

@@ -1,19 +1,22 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-interface IProps {
-  style: string;
-  currency: string;
-  minimumFractionDigits: number;
-}
-
 @Pipe({
   name: 'currencyFormat',
 })
+
 export class CurrencyFormatPipe implements PipeTransform {
-  transform(value: string, args: IProps): unknown {
+  transform(value: string): string {
+    const number = Number(value);
 
-    const formattedValue = Number(value).toLocaleString('pt-BR', args);
+    if (isNaN(number)) {
+      return value;
+    }
 
-    return formattedValue;
+    const result = number.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    });
+
+    return result;
   }
 }

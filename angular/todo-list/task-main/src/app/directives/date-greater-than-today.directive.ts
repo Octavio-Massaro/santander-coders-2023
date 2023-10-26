@@ -15,6 +15,8 @@ export class DateGreaterThanTodayDirective {
 
     if(today > dateFormat) {
       this.element.nativeElement.style.color = 'red';
+    }else{
+      this.element.nativeElement.style.color = 'green';
     }
   }
 }
