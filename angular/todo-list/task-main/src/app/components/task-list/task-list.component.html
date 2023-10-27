@@ -1,4 +1,4 @@
-<div>
+<div class="bg">
   <h2>Tarefas</h2>
 
   <app-task-filtro (onChangeFiltro)="handleFiltro($event)"></app-task-filtro>
@@ -11,8 +11,8 @@
             <div class="card mb-1" style="width: 15rem; height: 12rem;">
               <div class="card-body" appDateGreaterThanToday [Date]="task.date">
                 <h4 class="card-title">{{ task.title | currencyFormat }}</h4>
-                <p class="card-text">{{ task.date | date : "dd/MM/yyyy" }} </p>
-                <p class="card-text">{{ task.description }}</p>
+                <p class="card-text">{{task.date | date : "dd/MM/yyyy" }} </p>
+                <p class="card-text">{{task.description }}</p>
               </div>
             </div>
           </li>
@@ -55,5 +55,5 @@
     </ul>
   </div>
 
-  <button (click)="mostrarLista()" class="btn btn-primary mb-3">Mostrar Lista</button>
+  <button (click)="mostrarLista()" class="btn my-3 ms-3">Mostrar Lista</button>
 </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter,Input, Output } from '@angular/core';
 import { Task } from 'src/models/task.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -8,11 +8,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./task-form.component.scss'],
 })
 export class TaskFormComponent {
+
+  @Input() taskedited: Task | null = null;
   @Output() addTask = new EventEmitter();
+  @Output() editTask = new EventEmitter();
 
   formulario!: FormGroup;
 
   constructor(private formBuilder: FormBuilder){}
+
+  ngOnChanges() {
+    if(this.taskedited) {
+      this.formulario.reset({
+        ...this.taskedited,
+        date: new Date(this.taskedited.date).toISOString().split('T')[0]
+      });
+    }
+  }
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
@@ -34,7 +46,12 @@ export class TaskFormComponent {
     if (this.formulario.invalid) {
       this.markFormGroupTouched(this.formulario);
     } else {
-      this.addTask.emit(this.formulario.value);
+      if (this.taskedited) {
+        this.editTask.emit({...this.formulario.value, id: this.taskedited.id})
+
+      } else {
+        this.addTask.emit(this.formulario.value);
+      }
       this.formulario.reset()
       this.newTask = new Task();
   }

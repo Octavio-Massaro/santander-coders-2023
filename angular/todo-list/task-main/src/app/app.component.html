@@ -1,5 +1,8 @@
+<h1>Todo-List</h1>
 <div class="container">
-  <app-task-form (addTask)="onAddTask($event)"></app-task-form>
+  <app-task-form (addTask)="onAddTask($event)"
+  (editTask)="editTask($event)"
+  [taskedited]="taskedited"></app-task-form>
   <!-- <app-task-form-driven (addTask)="onAddTask($event)"></app-task-form-driven> -->
   <app-task-list
     [tasks]="listTask"
@@ -9,6 +12,7 @@
   <div *ngIf="selectedTask">
     <app-task-detail
       [task]="selectedTask"
+      (editTask)="setEditTask($event)"
       (closeDetail)="fecharDetalhes()"
     ></app-task-detail>
   </div>
